@@ -4,15 +4,15 @@
 **Proyecto:** `~/repo/asistenteTIP` (el que corre como `miapp.service` en el puerto 9000)
 **Referencia:** ver `diagnostico-asistente-tip.md` para el detalle de cada falla.
 
-Hola Pilar. Revisamos el asistente en producción con 8 preguntas típicas de estudiantes y fallaron 7. La buena noticia: casi todas las fallas tienen causas concretas y arreglables por separado. Te dejo los cambios ordenados por impacto. Hacé **un cambio por commit** y probá con las preguntas de la sección final después de cada uno.
+Hola Pilar. Probe el asistente en producción con 8 preguntas típicas de estudiantes y fallaron 7. La buena noticia: casi todas las fallas tienen causas concretas y arreglables por separado. Te dejo los cambios ordenados por impacto. Hacé **un cambio por commit** y probá con las preguntas de la sección final después de cada uno.
 
-> Importante: trabajá siempre sobre `repo/asistenteTIP`. La carpeta `~/asistenteOKCHa` es una versión vieja — te sugiero archivarla o borrarla para no editar el proyecto equivocado por error.
+> Ruta de proyecto `repo/asistenteTIP`
 
 ---
 
 ## Fase 1 — Bugs del router (backend/rag.py)
 
-### 1.1 Quitar tildes de las keywords del router ⭐ el más urgente
+### 1.1 Quitar tildes de las keywords del router. El más urgente!!!
 
 **Problema:** `normalizar_consulta()` le quita las tildes a la pregunta *antes* del routing, pero las keywords de `AGENTES` las tienen ("qué días", "cuándo hay clase"). Nunca pueden coincidir → el agente de presencialidades **jamás se ejecutó** en producción (verificable en `/health`: no aparece en la lista de agentes cargados).
 
