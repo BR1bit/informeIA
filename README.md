@@ -107,7 +107,7 @@ La redundancia acá es una ventaja: le da a la búsqueda por keywords más super
 
 ## Fase 3 — Cambios estructurales (cuando la Fase 1 y 2 estén probadas)
 
-### 3.1 Eliminar el RAG para todo salvo cursos ⭐ el que más simplifica
+### 3.1 Eliminar el RAG para todo salvo cursos el que más simplifica
 
 Tus datos de calendario + horarios + parciales + docentes + presencialidades suman **~18 KB (~5.000 tokens)**. Eso entra cómodo en el contexto del modelo. En lugar de rutear + buscar chunks (las dos fuentes principales de error), armá el prompt con **todo ese contenido siempre**:
 
